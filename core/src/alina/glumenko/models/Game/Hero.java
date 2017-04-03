@@ -42,13 +42,13 @@ public class Hero {
     }
 
     public Hero() {
-
         position = new Vector2(100, 330);
         speed = 10.0f;
         fireRate = 8;
-        hp = 15;
+        hp = 3;
         score = 0;
         rect = new Rectangle(position.x, position.y, HERO_WIDTH, HERO_HEIGHT);
+        bullets = new Bullet[BULLETS_COUNT];
     }
 
     public boolean takeDamage(int dmg) {
@@ -64,7 +64,6 @@ public class Hero {
         if (position.y > Gdx.graphics.getHeight()) {
             position.y = -rect.getHeight();
         }
-
         rect.setPosition(position.x, position.y);
     }
 
@@ -73,7 +72,6 @@ public class Hero {
         if (position.y < 0) {
             position.y = Gdx.graphics.getHeight();
         }
-
         rect.setPosition(position.x, position.y);
     }
 
@@ -82,7 +80,6 @@ public class Hero {
         if (position.x < 0) {
             position.x = 0;
         }
-
         rect.setPosition(position.x, position.y);
     }
 
@@ -91,7 +88,6 @@ public class Hero {
         if (position.x + rect.getWidth() > Gdx.graphics.getWidth()) {
             position.x = Gdx.graphics.getWidth() - rect.getWidth();
         }
-
         rect.setPosition(position.x, position.y);
     }
 
@@ -108,7 +104,6 @@ public class Hero {
         if (y > position.y + 30) {
             position.y += speed;
         }
-
         rect.setPosition(position.x, position.y);
     }
 

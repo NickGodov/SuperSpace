@@ -1,7 +1,6 @@
 package alina.glumenko.models.Game;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
@@ -10,13 +9,22 @@ import com.badlogic.gdx.math.Vector2;
  */
 public class Asteroid {
     public static final float SIZE = 64;
-    private static Texture texture;
+    private static final float INDEX_SPEED_FROM = 3.0f;
+    private static final float INDEX_SPEED_TO = 5.0f;
+    private static final float INDEX_SCALE = 0.2f;
+    private static final float INDEX_WEIGHT = 0.4f;
+    private static final int INDEX_MAXHP_FROM = 2;
+    private static final int INDEX_MAXHP = 6;
+    private static final float INDEX_ANGLE = 360.0f;
     private Vector2 position;
     private float speed;
     private Rectangle rect;
     private float angle;
+    private float scale;
     private int maxHp;
     private int hp;
+    private float screenWidth;
+    private float screenHeight;
 
     public int getMaxHp() {
         return maxHp;
@@ -27,35 +35,32 @@ public class Asteroid {
     }
 
     public Asteroid() {
-        position = new Vector2((float)Math.random() * 1280 + 1280, (float)Math.random() * 720);
-        speed = 3.0f + (float)Math.random() + 5.0f;
-        angle = (float)Math.random() * 360.0f;
-        if(texture == null) {
-            texture = new Texture("asteroid64.png");
-        }
-        rect = new Rectangle(position.x, position.y, 64, 64);
-        maxHp = 2 + (int)(Math.random() * 6);
+        screenWidth = Gdx.graphics.getWidth();
+        screenHeight = Gdx.graphics.getHeight();
+        position = new Vector2((float)Math.random() * screenWidth + screenWidth, (float)Math.random() * screenHeight);
+        speed = INDEX_SPEED_FROM + (float)Math.random() + INDEX_SPEED_TO;
+        angle = (float)Math.random() * INDEX_ANGLE;
+        rect = new Rectangle(position.x, position.y, SIZE, SIZE);
+        maxHp = INDEX_MAXHP_FROM + (int)(Math.random() * INDEX_MAXHP);
         hp = maxHp;
+        scale = INDEX_WEIGHT + hp * INDEX_SCALE;
     }
 
     public void recreate() {
-        position.x = (float)Math.random() * 1280 + 1280;
-        position.y = (float)Math.random() * 720;
-        speed = 3.0f + (float)Math.random() + 5.0f;
-        angle = (float)Math.random() * 360.0f;
-        maxHp = 2 + (int)(Math.random() * 6);
+        screenWidth = Gdx.graphics.getWidth();
+        screenHeight = Gdx.graphics.getHeight();
+        position.x = (float)Math.random() * screenWidth + screenWidth;
+        position.y = (float)Math.random() * screenHeight;
+        speed = INDEX_SPEED_FROM + (float)Math.random() + INDEX_SPEED_TO;
+        angle = (float)Math.random() * INDEX_ANGLE;
+        maxHp = INDEX_MAXHP_FROM + (int)(Math.random() * INDEX_MAXHP);
         hp = maxHp;
     }
 
-    public void render(SpriteBatch batch) {
-        float scale = 0.4f + hp * 0.2f;
-        batch.draw(texture, position.x, position.y, 32, 32, 64, 64, scale, scale, angle, 0, 0, 64, 64, false, false);
-    }
-
     public void update() {
-        position.x -= speed - hp * 0.4f;
+        position.x -= speed - hp * INDEX_WEIGHT;
         angle += speed / 2;
-        if(position.x < -64) {
+        if(position.x < -SIZE) {
             recreate();
         }
         rect.x = position.x;
@@ -73,5 +78,13 @@ public class Asteroid {
 
     public Vector2 getPosition() {
         return position;
+    }
+
+    public float getAngle() {
+        return angle;
+    }
+
+    public float getScale() {
+        return scale;
     }
 }
