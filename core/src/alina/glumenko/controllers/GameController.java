@@ -2,7 +2,6 @@ package alina.glumenko.controllers;
 
 import alina.glumenko.models.Game.GameModel;
 import alina.glumenko.models.Game.Hero;
-import alina.glumenko.views.GameRender;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 
@@ -11,10 +10,15 @@ import com.badlogic.gdx.Input;
  */
 public class GameController {
 
+    private static GameController gameController = new GameController();
     private GameModel model;
 
-    public GameController(GameModel model) {
-        this.model = model;
+    public static GameController getInstance() {
+        return gameController;
+    }
+
+    private GameController() {
+        this.model = GameModel.getInstance();
     }
 
     public void update(float delta) {

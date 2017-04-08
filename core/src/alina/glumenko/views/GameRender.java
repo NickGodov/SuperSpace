@@ -1,6 +1,7 @@
 package alina.glumenko.views;
 
 import alina.glumenko.models.Game.Asteroid;
+import alina.glumenko.models.Game.Bullet;
 import alina.glumenko.models.Game.GameModel;
 import alina.glumenko.models.Game.Star;
 import com.badlogic.gdx.Gdx;
@@ -15,8 +16,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  */
 public class GameRender {
 
+    private static GameRender gameRender = new GameRender();
     private GameModel model;
-
     private SpriteBatch batch;
     private Texture bkg;
     private Texture textureBullet;
@@ -25,11 +26,13 @@ public class GameRender {
     private BitmapFont fnt;
     private Texture textureHero;
 
-    public GameRender(GameModel model) {
+    public static GameRender getInstance() {
+        return gameRender;
+    }
 
+    private GameRender() {
         batch = new SpriteBatch();
-        this.model = model;
-
+        this.model = GameModel.getInstance();
         loadTextures();
     }
 
@@ -38,14 +41,17 @@ public class GameRender {
         textureAstr = new Texture("asteroid64.png");
         textureBullet = new Texture("bullet32x18.png");
         createBkg();
+        createStar();
     }
 
     public void  render() {
         batch.begin();
         model.update();
         drawBkg();
+        drawStars();
         drawAsteroids();
         drawHero();
+        drawBullets();
         drawUI();
         batch.end();
     }
@@ -58,8 +64,8 @@ public class GameRender {
     }
 
     private void createStar() {
-        int starSize = 5;
-        Pixmap pixmap = new Pixmap( Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), Pixmap.Format.RGBA8888);
+        int starSize = 1;
+        Pixmap pixmap = new Pixmap(5, 5, Pixmap.Format.RGBA8888);
         pixmap.setColor(Color.WHITE);
         pixmap.fillCircle(0, 0, starSize);
         textureStar = new Texture(pixmap);
@@ -67,9 +73,6 @@ public class GameRender {
 
     private void drawBkg(){
         batch.draw(bkg, 0 , 0);
-//        for(Star star : model.getStars()) {
-//            batch.draw(textureStar, star.getPosition().x, star.getPosition().y);
-//        }
     }
 
     private void drawUI() {
@@ -89,6 +92,20 @@ public class GameRender {
 
     private void drawHero() {
         batch.draw(textureHero, model.getHero().getPosition().x, model.getHero().getPosition().y, model.getHero().getRect().width, model.getHero().getRect().height);
+    }
+
+    private void drawBullets() {
+        for(Bullet bullet : model.getHero().getBullets()) {
+            if(bullet.isActive()) {
+                batch.draw(textureBullet, bullet.getPosition().x - bullet.WIDTH/2, bullet.getPosition().y - bullet.HEIGHT/2);
+            }
+        }
+    }
+
+    private void drawStars() {
+        for(Star star : model.getStars()) {
+            batch.draw(textureStar, star.getPosition().x, star.getPosition().y);
+        }
     }
 
     public void dispose() {

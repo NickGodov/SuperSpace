@@ -30,9 +30,9 @@ public class MenuScreen implements Screen, InputProcessor {
 
     @Override
     public void show() {
-        model = new GameModel();
-        render = new GameRender(model);
-        controller = new GameController(model);
+        model = GameModel.getInstance();
+        render = GameRender.getInstance();
+        controller = GameController.getInstance();
         Gdx.input.setInputProcessor(this);
         Gdx.input.setCatchBackKey(true);
     }

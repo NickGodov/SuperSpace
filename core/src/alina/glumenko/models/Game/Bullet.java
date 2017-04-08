@@ -1,19 +1,18 @@
 package alina.glumenko.models.Game;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
 
 /**
  * Created by Alina on 26.03.2017.
  */
 public class Bullet {
+    public static final int WIDTH = 32;
+    public static final int HEIGHT = 18;
     private Vector2 position;
-    private float speed;
+    private float speed = 12.0f;
     private boolean active;
     private Hero owner;
-
-    public Hero getOwner() {
-        return owner;
-    }
 
     public Vector2 getPosition() {
         return position;
@@ -25,7 +24,6 @@ public class Bullet {
 
     public Bullet() {
         position = new Vector2(0, 0);
-        speed = 12.0f;
         active = false;
     }
 
@@ -42,7 +40,7 @@ public class Bullet {
 
     public void update() {
         position.x += speed;
-        if(position.x > 1280) {
+        if(position.x > Gdx.graphics.getWidth()) {
             destroy();
         }
     }

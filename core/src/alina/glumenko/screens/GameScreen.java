@@ -22,9 +22,9 @@ public class GameScreen implements Screen {
 
     @Override
     public void show() {
-        model = new GameModel();
-        render = new GameRender(model);
-        controller = new GameController(model);
+        model = GameModel.getInstance();
+        render = GameRender.getInstance();
+        controller = GameController.getInstance();
     }
 
     @Override

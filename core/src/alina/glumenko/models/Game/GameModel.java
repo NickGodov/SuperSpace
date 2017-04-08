@@ -5,15 +5,19 @@ package alina.glumenko.models.Game;
  */
 public class GameModel {
 
+    private static GameModel gameModel = new GameModel();
     private Hero hero;
+    private static final int STARS_COUNT = 300;
+    private Star[] stars;
     private final int ASTEROIDS_COUNT = 40;
     private Asteroid[] asteroids;
     private float levelTime;
 
-    private static final int STARS_COUNT = 300;
-    private Star[] stars;
+    public static GameModel getInstance() {
+        return gameModel;
+    }
 
-    public GameModel() {
+    private GameModel() {
         this.hero = new Hero();
         this.asteroids = new Asteroid[ASTEROIDS_COUNT];
         createAsteroids();
@@ -35,9 +39,15 @@ public class GameModel {
 
     public void update() {
         //update stars
-//        for(int i = 0; i < stars.length; i++) {
-//            stars[i].update();
-//        }
+        for(int i = 0; i < stars.length; i++) {
+            stars[i].update();
+        }
+
+        //update bullets
+        Bullet[] bullets = hero.getBullets();
+        for(int i = 0; i < bullets.length; i++) {
+            bullets[i].update();
+        }
 
         //update asteroids
         for(Asteroid asteroid : asteroids) {

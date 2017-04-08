@@ -12,7 +12,7 @@ public class Hero {
     private static final int HERO_WIDTH = 85;
     private static final int HERO_HEIGHT = 50;
     private final int BULLETS_COUNT = 200;
-    public static Bullet[] bullets;
+    private Bullet[] bullets;
     private Vector2 position;
     private float speed;
     private int fireRate;
@@ -41,6 +41,10 @@ public class Hero {
         return hp;
     }
 
+    public Bullet[] getBullets() {
+        return bullets;
+    }
+
     public Hero() {
         position = new Vector2(100, 330);
         speed = 10.0f;
@@ -49,6 +53,13 @@ public class Hero {
         score = 0;
         rect = new Rectangle(position.x, position.y, HERO_WIDTH, HERO_HEIGHT);
         bullets = new Bullet[BULLETS_COUNT];
+        createBullets();
+    }
+
+    private void createBullets() {
+        for(int i = 0; i < bullets.length; i++) {
+            bullets[i] = new Bullet();
+        }
     }
 
     public boolean takeDamage(int dmg) {
@@ -115,10 +126,10 @@ public class Hero {
         }
     }
 
-    public void fire() {
+    private void fire() {
         for (int i = 0; i < bullets.length; i++) {
             if (!bullets[i].isActive()) {
-                bullets[i].setup(this, position.x + 48, position.y + 24);
+                bullets[i].setup(this, position.x + HERO_WIDTH, position.y + HERO_HEIGHT / 2);
                 break;
             }
         }
