@@ -103,16 +103,16 @@ public class Hero {
     }
 
     public void moveTo(float x, float y) {
-        if (x < position.x + 40) {
+        if (x < position.x + HERO_WIDTH/2) {
             position.x -= speed;
         }
-        if (x > position.x + 40) {
+        if (x > position.x + HERO_WIDTH/2) {
             position.x += speed;
         }
-        if (y < position.y + 30) {
+        if (y < position.y + HERO_HEIGHT/2) {
             position.y -= speed;
         }
-        if (y > position.y + 30) {
+        if (y > position.y + HERO_HEIGHT/2) {
             position.y += speed;
         }
         rect.setPosition(position.x, position.y);
@@ -129,7 +129,7 @@ public class Hero {
     private void fire() {
         for (int i = 0; i < bullets.length; i++) {
             if (!bullets[i].isActive()) {
-                bullets[i].setup(this, position.x + HERO_WIDTH, position.y + HERO_HEIGHT / 2);
+                bullets[i].setup(this, position.x + HERO_WIDTH, position.y + HERO_HEIGHT/2);
                 break;
             }
         }

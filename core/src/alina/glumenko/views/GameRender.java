@@ -17,13 +17,17 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class GameRender {
 
     private static GameRender gameRender = new GameRender();
+    private BitmapFont font;
     private GameModel model;
     private SpriteBatch batch;
     private Texture bkg;
     private Texture textureBullet;
     private Texture textureAstr;
     private Texture textureStar;
-    private BitmapFont fnt;
+    private Texture textureHP;
+    private Texture texturePoint;
+    private Texture textureBonusHP;
+    private Texture textureBonusPoint;
     private Texture textureHero;
 
     public static GameRender getInstance() {
@@ -40,8 +44,14 @@ public class GameRender {
         textureHero = new Texture("ship85x50.png");
         textureAstr = new Texture("asteroid64.png");
         textureBullet = new Texture("bullet32x18.png");
+        textureHP = new Texture("health.png");
+        texturePoint = new Texture("point.png");
+        textureBonusHP = new Texture("bonus-health.png");
+        textureBonusPoint = new Texture("bonus-point.png");
+
         createBkg();
         createStar();
+        createFont();
     }
 
     public void  render() {
@@ -71,12 +81,28 @@ public class GameRender {
         textureStar = new Texture(pixmap);
     }
 
+    private void createFont() {
+        font = new BitmapFont();
+        font.setColor(Color.WHITE);
+    }
+
     private void drawBkg(){
         batch.draw(bkg, 0 , 0);
     }
 
     private void drawUI() {
+        int padding = 10;
+        int distBetween = 5;
+        int margin = textureHP.getWidth() + distBetween;
+        int scoreX = padding * 2 + texturePoint.getWidth();
+        int scoreY = padding * 2 + textureHP.getHeight() + texturePoint.getHeight()/2;
 
+
+        for(int i = 0; i < model.getHero().getHp(); i++) {
+            batch.draw(textureHP, 0 + i * margin + padding, padding);
+        }
+        batch.draw(texturePoint, padding, padding * 2 + textureHP.getHeight());
+        font.draw(batch, "" + model.getHero().getScore(), scoreX, scoreY);
     }
 
     private void drawAsteroids() {
