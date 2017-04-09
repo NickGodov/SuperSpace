@@ -22,7 +22,7 @@ public class Asteroid {
     private float angle;
     private float scale;
     private int maxHp;
-    private int sizeForRect = (int)Math.sqrt(Math.pow(SIZE, 2) / 2);
+    private int sizeForRect = (int)Math.sqrt(Math.pow(SIZE, 2)/2);
     private int hp;
     private float screenWidth;
     private float screenHeight;
@@ -52,8 +52,9 @@ public class Asteroid {
 
     public void update() {
         position.x -= speed - hp * INDEX_WEIGHT;
+        scale = INDEX_WEIGHT + hp * INDEX_SCALE;
         angle += speed / 2;
-        if(position.x < -sizeForRect) {
+        if(position.x < -SIZE) {
             recreate();
         }
         rect.x = position.x;
