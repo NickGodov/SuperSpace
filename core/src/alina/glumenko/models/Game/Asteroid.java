@@ -22,17 +22,10 @@ public class Asteroid {
     private float angle;
     private float scale;
     private int maxHp;
+    private int sizeForRect = (int)Math.sqrt(Math.pow(SIZE, 2) / 2);
     private int hp;
     private float screenWidth;
     private float screenHeight;
-
-    public int getMaxHp() {
-        return maxHp;
-    }
-
-    public Rectangle getRect() {
-        return rect;
-    }
 
     public Asteroid() {
         screenWidth = Gdx.graphics.getWidth();
@@ -40,10 +33,10 @@ public class Asteroid {
         position = new Vector2((float)Math.random() * screenWidth + screenWidth, (float)Math.random() * screenHeight);
         speed = INDEX_SPEED_FROM + (float)Math.random() + INDEX_SPEED_TO;
         angle = (float)Math.random() * INDEX_ANGLE;
-        rect = new Rectangle(position.x, position.y, SIZE, SIZE);
         maxHp = INDEX_MAXHP_FROM + (int)(Math.random() * INDEX_MAXHP);
         hp = maxHp;
         scale = INDEX_WEIGHT + hp * INDEX_SCALE;
+        rect = new Rectangle(position.x, position.y, sizeForRect, sizeForRect);
     }
 
     public void recreate() {
@@ -60,7 +53,7 @@ public class Asteroid {
     public void update() {
         position.x -= speed - hp * INDEX_WEIGHT;
         angle += speed / 2;
-        if(position.x < -SIZE) {
+        if(position.x < -sizeForRect) {
             recreate();
         }
         rect.x = position.x;
@@ -86,5 +79,13 @@ public class Asteroid {
 
     public float getScale() {
         return scale;
+    }
+
+    public int getMaxHp() {
+        return maxHp;
+    }
+
+    public Rectangle getRect() {
+        return rect;
     }
 }

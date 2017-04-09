@@ -23,8 +23,6 @@ public class Star {
     }
 
     public void update() {
-        screenHeight = Gdx.graphics.getHeight();
-        screenWidth = Gdx.graphics.getWidth();
         position.x -= speed;
         if(position.x < -POSITION_X_LIMIT) {
             position.x = screenWidth;

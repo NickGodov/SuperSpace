@@ -14,18 +14,21 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 /**
  * Created by Alina on 29.03.2017.
  */
-public class MenuScreen implements Screen, InputProcessor {
+public class MenuScreen implements Screen {
 
-    SuperSpace game;
+    private SuperSpace game;
     private GameModel model;
     private GameRender render;
     private GameController controller;
-    private SpriteBatch batch;
-    private BitmapFont fnt;
-    private Texture bgtexture;
 
-    public MenuScreen(SuperSpace superSpace) {
-        this.game = superSpace;
+    private static MenuScreen menuScreen = new MenuScreen();
+
+    private MenuScreen() {
+        this.game = SuperSpace.getInstance();
+    }
+
+    public static MenuScreen getInstance() {
+        return menuScreen;
     }
 
     @Override
@@ -33,8 +36,6 @@ public class MenuScreen implements Screen, InputProcessor {
         model = GameModel.getInstance();
         render = GameRender.getInstance();
         controller = GameController.getInstance();
-        Gdx.input.setInputProcessor(this);
-        Gdx.input.setCatchBackKey(true);
     }
 
 
@@ -74,47 +75,8 @@ public class MenuScreen implements Screen, InputProcessor {
         render.dispose();
     }
 
-    @Override
-    public boolean keyDown(int keycode) {
-        return true;
-    }
-
-    @Override
-    public boolean keyUp(int keycode) {
-        if(keycode == Input.Keys.BACK) {
-            this.dispose();
-            game.setScreen(game.menu);
-        }
-        return true;
-    }
-
-    @Override
-    public boolean keyTyped(char character) {
-        return false;
-    }
-
-    @Override
-    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        return false;
-    }
-
-    @Override
-    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-        return false;
-    }
-
-    @Override
-    public boolean touchDragged(int screenX, int screenY, int pointer) {
-        return false;
-    }
-
-    @Override
-    public boolean mouseMoved(int screenX, int screenY) {
-        return false;
-    }
-
-    @Override
-    public boolean scrolled(int amount) {
-        return false;
+    public void setGameScreen() {
+        this.dispose();
+        game.setScreen(game.game);
     }
 }

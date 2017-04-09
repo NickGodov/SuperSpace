@@ -2,23 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48633fc9-0c26-4368-8196-5823e5f60a5e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/bullet32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/assets/ship80x60.tga" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/alina/glumenko/screens/PauseScreen.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/alina/glumenko/controllers/MusicController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/core/alina/glumenko/controllers/MusicController.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/core/alina/glumenko/SuperSpace.class" afterPath="$PROJECT_DIR$/out/production/core/alina/glumenko/SuperSpace.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/core/alina/glumenko/controllers/GameController.class" afterPath="$PROJECT_DIR$/out/production/core/alina/glumenko/controllers/GameController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/core/alina/glumenko/models/Game/Asteroid.class" afterPath="$PROJECT_DIR$/out/production/core/alina/glumenko/models/Game/Asteroid.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/core/alina/glumenko/models/Game/Bullet.class" afterPath="$PROJECT_DIR$/out/production/core/alina/glumenko/models/Game/Bullet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/core/alina/glumenko/models/Game/GameModel.class" afterPath="$PROJECT_DIR$/out/production/core/alina/glumenko/models/Game/GameModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/core/alina/glumenko/models/Game/Hero.class" afterPath="$PROJECT_DIR$/out/production/core/alina/glumenko/models/Game/Hero.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/core/alina/glumenko/models/Game/Star.class" afterPath="$PROJECT_DIR$/out/production/core/alina/glumenko/models/Game/Star.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/core/alina/glumenko/models/Menu/MenuModel.class" afterPath="$PROJECT_DIR$/out/production/core/alina/glumenko/models/Menu/MenuModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/core/alina/glumenko/screens/GameScreen.class" afterPath="$PROJECT_DIR$/out/production/core/alina/glumenko/screens/GameScreen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/core/alina/glumenko/screens/MenuScreen.class" afterPath="$PROJECT_DIR$/out/production/core/alina/glumenko/screens/MenuScreen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/core/alina/glumenko/views/GameRender.class" afterPath="$PROJECT_DIR$/out/production/core/alina/glumenko/views/GameRender.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Super space.iws" afterPath="$PROJECT_DIR$/Super space.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/alina/glumenko/SuperSpace.java" afterPath="$PROJECT_DIR$/core/src/alina/glumenko/SuperSpace.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/alina/glumenko/controllers/GameController.java" afterPath="$PROJECT_DIR$/core/src/alina/glumenko/controllers/GameController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Asteroid.java" afterPath="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Asteroid.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Bullet.java" afterPath="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Bullet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/GameModel.java" afterPath="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/GameModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Hero.java" afterPath="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Hero.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Star.java" afterPath="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Star.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/alina/glumenko/models/Menu/MenuModel.java" afterPath="$PROJECT_DIR$/core/src/alina/glumenko/models/Menu/MenuModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/alina/glumenko/screens/GameScreen.java" afterPath="$PROJECT_DIR$/core/src/alina/glumenko/screens/GameScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/alina/glumenko/screens/MenuScreen.java" afterPath="$PROJECT_DIR$/core/src/alina/glumenko/screens/MenuScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/alina/glumenko/views/GameRender.java" afterPath="$PROJECT_DIR$/core/src/alina/glumenko/views/GameRender.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -78,78 +83,14 @@
     <favorites_list name="Super space" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/GameModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-              <folding>
-                <element signature="e#1394#1395#0" expanded="false" />
-                <element signature="e#1421#1422#0" expanded="false" />
-                <element signature="e#1461#1462#0" expanded="false" />
-                <element signature="e#1493#1494#0" expanded="false" />
-                <element signature="e#1525#1526#0" expanded="false" />
-                <element signature="e#1553#1554#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameRender.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/views/GameRender.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-122">
-              <caret line="67" column="39" lean-forward="false" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2136#2137#0" expanded="true" />
-                <element signature="e#2174#2175#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameScreen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/screens/GameScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SuperSpace.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/SuperSpace.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding>
-                <element signature="e#496#497#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuScreen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/screens/MenuScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Singleton" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -174,22 +115,24 @@
         <option value="$PROJECT_DIR$/core/src/alina/glumenko/screens/Screen.java" />
         <option value="$PROJECT_DIR$/core/src/alina/glumenko/controllers/MusicController.java" />
         <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Game.java" />
-        <option value="$PROJECT_DIR$/core/src/alina/glumenko/SuperSpace.java" />
+        <option value="$PROJECT_DIR$/desktop/src/alina/glumenko/desktop/DesktopLauncher.java" />
+        <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Background.java" />
+        <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/bh.java" />
+        <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Hero.java" />
         <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Menu/MenuModel.java" />
         <option value="$PROJECT_DIR$/core/src/alina/glumenko/controllers/MenuController.java" />
-        <option value="$PROJECT_DIR$/desktop/src/alina/glumenko/desktop/DesktopLauncher.java" />
-        <option value="$PROJECT_DIR$/core/src/alina/glumenko/views/MenuRender.java" />
-        <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Background.java" />
-        <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Asteroid.java" />
-        <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Star.java" />
-        <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/bh.java" />
         <option value="$PROJECT_DIR$/core/src/alina/glumenko/controllers/GameController.java" />
+        <option value="$PROJECT_DIR$/core/src/alina/glumenko/SuperSpace.java" />
         <option value="$PROJECT_DIR$/core/src/alina/glumenko/screens/MenuScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/alina/glumenko/screens/PauseScreen.java" />
         <option value="$PROJECT_DIR$/core/src/alina/glumenko/screens/GameScreen.java" />
-        <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/GameModel.java" />
-        <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Hero.java" />
         <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Bullet.java" />
+        <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Star.java" />
+        <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/GameModel.java" />
+        <option value="$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Asteroid.java" />
         <option value="$PROJECT_DIR$/core/src/alina/glumenko/views/GameRender.java" />
+        <option value="$PROJECT_DIR$/core/src/alina/glumenko/views/MenuRnder.java" />
+        <option value="$PROJECT_DIR$/core/src/alina/glumenko/views/MenuRender.java" />
       </list>
     </option>
   </component>
@@ -198,10 +141,9 @@
     <option name="LAST_EDITED_TAB_NAME" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="70" />
-    <option name="y" value="-8" />
-    <option name="width" value="1858" />
-    <option name="height" value="1096" />
+    <option name="x" value="71" />
+    <option name="width" value="935" />
+    <option name="height" value="1077" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -226,7 +168,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -275,10 +216,149 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Super space" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="glumenko" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Super space" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="glumenko" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="screens" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Super space" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="glumenko" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Menu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Super space" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="glumenko" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Super space" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="git" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="glumenko" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -556,25 +636,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="70" y="-8" width="1858" height="1096" extended-state="7" />
+    <frame x="71" y="0" width="935" height="1077" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275862" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32678387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988626" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39249492" sideWeight="0.5021716" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39296794" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4022751" sideWeight="0.49782845" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32352942" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.117263846" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29270947" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -606,21 +686,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Hero.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="93" column="48" lean-forward="false" selection-start-line="93" selection-start-column="48" selection-end-line="93" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desktop/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/desktop/src/alina/glumenko/desktop/DesktopLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -636,19 +701,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Game.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/controllers/MusicController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/controllers/MusicController.java" />
     <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/SuperSpace.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#458#459#0" expanded="false" />
+            <element signature="e#491#492#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -659,8 +719,6 @@
           <caret line="23" column="52" lean-forward="true" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2136#2137#0" expanded="true" />
-            <element signature="e#2174#2175#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -670,7 +728,8 @@
         <state relative-caret-position="119">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -688,12 +747,8 @@
         <state relative-caret-position="289">
           <caret line="21" column="5" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="21" selection-end-column="5" />
           <folding>
-            <element signature="e#1394#1395#0" expanded="false" />
-            <element signature="e#1421#1422#0" expanded="false" />
-            <element signature="e#1461#1462#0" expanded="false" />
-            <element signature="e#1493#1494#0" expanded="false" />
-            <element signature="e#1525#1526#0" expanded="false" />
-            <element signature="e#1553#1554#0" expanded="false" />
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -742,9 +797,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
           <caret line="70" column="5" lean-forward="false" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -753,7 +806,8 @@
         <state relative-caret-position="663">
           <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -772,9 +826,7 @@
     <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/screens/Screen.java" />
     <entry file="file://D:/../../../../Виталик/RoleSpell.java" />
     <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Game.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/controllers/MenuController.java" />
     <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Menu/MenuBkg.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/views/MenuRender.java" />
     <entry file="file://$PROJECT_DIR$/desktop/src/alina/glumenko/desktop/DesktopLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -796,69 +848,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Background.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Asteroid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="14" column="49" lean-forward="false" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Star.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1176#1177#0" expanded="false" />
-            <element signature="e#1207#1208#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Class.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/controllers/MusicController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/controllers/MusicController.java" />
     <entry file="file://$PROJECT_DIR$/desktop/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/bh.java" />
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Menu/MenuModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/controllers/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.5/df0e6a52ed42009b20ab64cc81e57c3ae24d9109/gdx-1.9.5-sources.jar!/com/badlogic/gdx/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -866,74 +866,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Hero.java">
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Menu/MenuModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-884">
-          <caret line="55" column="24" lean-forward="false" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/GameModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="119">
+          <caret line="7" column="56" lean-forward="false" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
           <folding>
-            <element signature="e#1394#1395#0" expanded="false" />
-            <element signature="e#1421#1422#0" expanded="false" />
-            <element signature="e#1461#1462#0" expanded="false" />
-            <element signature="e#1493#1494#0" expanded="false" />
-            <element signature="e#1525#1526#0" expanded="false" />
-            <element signature="e#1553#1554#0" expanded="false" />
+            <element signature="e#207#208#0" expanded="false" />
+            <element signature="e#239#240#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Bullet.java">
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/controllers/MenuController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        <state relative-caret-position="204">
+          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/df.java" />
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/controllers/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1">
+          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/screens/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/screens/PauseScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="63" column="23" lean-forward="false" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/screens/GameScreen.java">
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+        <state relative-caret-position="85">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+          <folding>
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Hero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="64" column="19" lean-forward="false" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Star.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="26" lean-forward="false" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/GameModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="48" column="64" lean-forward="false" selection-start-line="48" selection-start-column="64" selection-end-line="48" selection-end-column="64" />
+          <folding>
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/SuperSpace.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#496#497#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/screens/MenuScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/views/GameRender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-122">
-          <caret line="67" column="39" lean-forward="false" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="39" />
+        <state relative-caret-position="663">
+          <caret line="88" column="58" lean-forward="false" selection-start-line="88" selection-start-column="58" selection-end-line="88" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2136#2137#0" expanded="true" />
-            <element signature="e#2174#2175#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/models/Game/Asteroid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="81" column="5" lean-forward="false" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+          <folding>
+            <element signature="e#2562#2563#0" expanded="true" />
+            <element signature="e#2590#2591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/screens/MenuScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="79" column="32" lean-forward="false" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/alina/glumenko/views/MenuRender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>

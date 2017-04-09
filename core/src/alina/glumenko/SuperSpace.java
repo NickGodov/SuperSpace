@@ -2,6 +2,7 @@ package alina.glumenko;
 
 import alina.glumenko.screens.GameScreen;
 import alina.glumenko.screens.MenuScreen;
+import alina.glumenko.screens.PauseScreen;
 import com.badlogic.gdx.Game;
 
 /**
@@ -11,11 +12,19 @@ public class SuperSpace extends Game {
 
     public GameScreen game;
     public MenuScreen menu;
+    public PauseScreen pause;
+
+    private static SuperSpace superSpace = new SuperSpace();
+
+    public static SuperSpace getInstance() {
+        return superSpace;
+    }
 
     @Override
     public void create() {
-        game = new GameScreen(this);
-        menu = new MenuScreen(this);
+        game = GameScreen.getInstance();
+        menu =  MenuScreen.getInstance();
+        pause =  PauseScreen.getInstance();
         setScreen(menu);
     }
 

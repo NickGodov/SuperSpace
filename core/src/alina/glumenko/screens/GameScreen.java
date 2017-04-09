@@ -4,6 +4,7 @@ import alina.glumenko.SuperSpace;
 import alina.glumenko.controllers.GameController;
 import alina.glumenko.models.Game.GameModel;
 import alina.glumenko.views.GameRender;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
@@ -13,11 +14,19 @@ import com.badlogic.gdx.graphics.GL20;
  */
 public class GameScreen implements Screen {
 
+    private SuperSpace game;
     private GameModel model;
     private GameController controller;
     private GameRender render;
 
-    public GameScreen(SuperSpace superSpace) {
+    private static GameScreen gameScreen = new GameScreen();
+
+    private GameScreen() {
+        this.game = SuperSpace.getInstance();
+    }
+
+    public static GameScreen getInstance() {
+        return gameScreen;
     }
 
     @Override
@@ -53,11 +62,17 @@ public class GameScreen implements Screen {
 
     @Override
     public void hide() {
-
+        Gdx.input.setInputProcessor(null);
     }
 
     @Override
     public void dispose() {
+        Gdx.input.setInputProcessor(null);
+        Gdx.input.setCatchBackKey(false);
+        render.dispose();
+    }
 
+    public void setPauseScreen() {
+        game.setScreen(game.pause);
     }
 }

@@ -44,4 +44,8 @@ public class Bullet {
             destroy();
         }
     }
+
+    public Hero getOwner() {
+        return owner;
+    }
 }
