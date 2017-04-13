@@ -9,10 +9,11 @@ import com.badlogic.gdx.math.Vector2;
 public class Bullet {
     public static final int WIDTH = 32;
     public static final int HEIGHT = 18;
+    private float width = WIDTH/3;
+    private float height = HEIGHT/3;
     private Vector2 position;
     private float speed = 12.0f;
     private boolean active;
-    private Hero owner;
 
     public Vector2 getPosition() {
         return position;
@@ -31,8 +32,7 @@ public class Bullet {
         active = false;
     }
 
-    public void setup(Hero owner, float x, float y) {
-        this.owner = owner;
+    public void setup(float x, float y) {
         position.x = x;
         position.y = y;
         active = true;
@@ -45,7 +45,11 @@ public class Bullet {
         }
     }
 
-    public Hero getOwner() {
-        return owner;
+    public float getWidth() {
+        return width;
+    }
+
+    public float getHeight() {
+        return height;
     }
 }

@@ -1,6 +1,7 @@
 package alina.glumenko.models.Game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
@@ -18,11 +19,10 @@ public class Asteroid {
     private static final float INDEX_ANGLE = 360.0f;
     private Vector2 position;
     private float speed;
-    private Rectangle rect;
+    private Circle circle;
     private float angle;
     private float scale;
     private int maxHp;
-    private int sizeForRect = (int)Math.sqrt(Math.pow(SIZE, 2)/2);
     private int hp;
     private float screenWidth;
     private float screenHeight;
@@ -36,7 +36,7 @@ public class Asteroid {
         maxHp = INDEX_MAXHP_FROM + (int)(Math.random() * INDEX_MAXHP);
         hp = maxHp;
         scale = INDEX_WEIGHT + hp * INDEX_SCALE;
-        rect = new Rectangle(position.x, position.y, sizeForRect, sizeForRect);
+        circle = new Circle(position.x, position.y, SIZE/2);
     }
 
     public void recreate() {
@@ -57,8 +57,8 @@ public class Asteroid {
         if(position.x < -SIZE) {
             recreate();
         }
-        rect.x = position.x;
-        rect.y = position.y;
+        circle.x = position.x;
+        circle.y = position.y;
     }
 
     public boolean takeDamage(int dmg) {
@@ -86,7 +86,7 @@ public class Asteroid {
         return maxHp;
     }
 
-    public Rectangle getRect() {
-        return rect;
+    public Circle getCircle() {
+        return circle;
     }
 }

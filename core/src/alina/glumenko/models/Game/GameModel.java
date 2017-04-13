@@ -1,5 +1,7 @@
 package alina.glumenko.models.Game;
 
+import com.badlogic.gdx.math.Intersector;
+
 /**
  * Created by Alina on 29.03.2017.
  */
@@ -34,19 +36,17 @@ public class GameModel {
     }
 
     private void updateAsteroids() {
-        for(Asteroid asteroid : asteroids) {
-            asteroid.update();
+        for(int i = 0; i < asteroids.length; i++) {
+            asteroids[i].update();
 
             //check collision with hero
-            if(hero.getRect().overlaps(asteroid.getRect())) {
-                if(asteroid.takeDamage(DAMAGE)) {
-                    hero.addScore(DAMAGE * asteroid.getMaxHp());
+            if(Intersector.overlaps(asteroids[i].getCircle(), hero.getRect())) {
+                if(asteroids[i].takeDamage(DAMAGE)) {
+                    hero.addScore(DAMAGE * asteroids[i].getMaxHp());
                 }
                 if(hero.takeDamage(DAMAGE)) {
                     restart();
                 }
-                System.out.println("HP: " + hero.getHp());
-                System.out.println("Score: " + hero.getScore());
             }
         }
     }
@@ -56,10 +56,10 @@ public class GameModel {
         for(int i = 0; i < bullets.length; i++) {
             bullets[i].update();
             for(int j = 0; j < asteroids.length; j++) {
-                if(asteroids[j].getRect().contains(bullets[i].getPosition())) {
+                if(asteroids[j].getCircle().contains(bullets[i].getPosition())) {
                     bullets[i].destroy();
                     if(asteroids[j].takeDamage(DAMAGE)) {
-                        bullets[i].getOwner().addScore(DAMAGE * asteroids[j].getMaxHp());
+                        hero.addScore(DAMAGE * asteroids[j].getMaxHp());
                     }
                 }
             }

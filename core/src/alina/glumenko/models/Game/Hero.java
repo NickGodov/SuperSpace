@@ -129,7 +129,7 @@ public class Hero {
     private void fire() {
         for (int i = 0; i < bullets.length; i++) {
             if (!bullets[i].isActive()) {
-                bullets[i].setup(this, position.x + HERO_WIDTH, position.y + HERO_HEIGHT/2);
+                bullets[i].setup(position.x + HERO_WIDTH, position.y + HERO_HEIGHT/2);
                 break;
             }
         }

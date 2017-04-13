@@ -107,7 +107,7 @@ public class GameRender {
 
     private void drawAsteroids() {
         for(Asteroid asteroid : model.getAsteroids()) {
-            batch.draw(textureAstr, asteroid.getPosition().x, asteroid.getPosition().y,
+            batch.draw(textureAstr, asteroid.getPosition().x - asteroid.SIZE/2, asteroid.getPosition().y - asteroid.SIZE/2,
                         asteroid.SIZE/2, asteroid.SIZE/2,
                         asteroid.SIZE, asteroid.SIZE,
                         asteroid.getScale(), asteroid.getScale(),
@@ -123,7 +123,7 @@ public class GameRender {
     private void drawBullets() {
         for(Bullet bullet : model.getHero().getBullets()) {
             if(bullet.isActive()) {
-                batch.draw(textureBullet, bullet.getPosition().x - bullet.WIDTH/2, bullet.getPosition().y - bullet.HEIGHT/2);
+                batch.draw(textureBullet, bullet.getPosition().x - bullet.WIDTH/2, bullet.getPosition().y - bullet.HEIGHT/2, bullet.getWidth(), bullet.getHeight());
             }
         }
     }
