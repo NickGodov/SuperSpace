@@ -1,15 +1,10 @@
 package alina.glumenko.screens;
 
-
 import alina.glumenko.SuperSpace;
-import alina.glumenko.controllers.GameController;
-import alina.glumenko.models.Game.GameModel;
-import alina.glumenko.views.GameRender;
+import alina.glumenko.controllers.MenuController;
+import alina.glumenko.views.MenuRender;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**
  * Created by Alina on 29.03.2017.
@@ -17,9 +12,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class MenuScreen implements Screen {
 
     private SuperSpace game;
-    private GameModel model;
-    private GameRender render;
-    private GameController controller;
+    private MenuRender render;
+    private MenuController controller;
 
     private static MenuScreen menuScreen = new MenuScreen();
 
@@ -33,9 +27,8 @@ public class MenuScreen implements Screen {
 
     @Override
     public void show() {
-        model = GameModel.getInstance();
-        render = GameRender.getInstance();
-        controller = GameController.getInstance();
+        render = MenuRender.getInstance();
+        controller = MenuController.getInstance();
     }
 
 
@@ -44,7 +37,7 @@ public class MenuScreen implements Screen {
         Gdx.gl.glClearColor(1f, 1f, 1f, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        controller.update(delta);
+        //controller.update(delta);
         render.render();
     }
 
