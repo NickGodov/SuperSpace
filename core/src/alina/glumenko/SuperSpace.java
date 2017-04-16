@@ -25,7 +25,7 @@ public class SuperSpace extends Game {
         game = GameScreen.getInstance();
         menu =  MenuScreen.getInstance();
         pause =  PauseScreen.getInstance();
-        setScreen(menu);
+        setScreen(game);
     }
 
     @Override

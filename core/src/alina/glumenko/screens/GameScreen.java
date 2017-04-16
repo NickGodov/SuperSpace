@@ -2,9 +2,8 @@ package alina.glumenko.screens;
 
 import alina.glumenko.SuperSpace;
 import alina.glumenko.controllers.GameController;
-import alina.glumenko.models.Game.GameModel;
+import alina.glumenko.models.GameModel;
 import alina.glumenko.views.GameRender;
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
@@ -42,6 +41,7 @@ public class GameScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         controller.update(delta);
+        model.update();
         render.render();
     }
 

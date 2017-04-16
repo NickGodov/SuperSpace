@@ -12,4 +12,7 @@ public class MenuController {
         return menuController;
     }
 
+
+    public void update(float delta) {
+    }
 }

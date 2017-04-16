@@ -1,9 +1,6 @@
 package alina.glumenko.views;
 
-import alina.glumenko.models.Game.Asteroid;
-import alina.glumenko.models.Game.Bullet;
-import alina.glumenko.models.Game.GameModel;
-import alina.glumenko.models.Game.Star;
+import alina.glumenko.models.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
@@ -107,12 +104,12 @@ public class GameRender {
 
     private void drawAsteroids() {
         for(Asteroid asteroid : model.getAsteroids()) {
-            batch.draw(textureAstr, asteroid.getPosition().x - asteroid.SIZE/2, asteroid.getPosition().y - asteroid.SIZE/2,
-                        asteroid.SIZE/2, asteroid.SIZE/2,
-                        asteroid.SIZE, asteroid.SIZE,
+            batch.draw(textureAstr, asteroid.getPosition().x - Cfg.Asteroid.SIZE/2, asteroid.getPosition().y - Cfg.Asteroid.SIZE/2,
+                    Cfg.Asteroid.SIZE/2, Cfg.Asteroid.SIZE/2,
+                    Cfg.Asteroid.SIZE, Cfg.Asteroid.SIZE,
                         asteroid.getScale(), asteroid.getScale(),
                         asteroid.getAngle(), 0, 0,
-                        (int)asteroid.SIZE, (int)asteroid.SIZE, false, false);
+                        (int)Cfg.Asteroid.SIZE, (int)Cfg.Asteroid.SIZE, false, false);
         }
     }
 
@@ -123,7 +120,7 @@ public class GameRender {
     private void drawBullets() {
         for(Bullet bullet : model.getHero().getBullets()) {
             if(bullet.isActive()) {
-                batch.draw(textureBullet, bullet.getPosition().x - bullet.WIDTH/2, bullet.getPosition().y - bullet.HEIGHT/2, bullet.getWidth(), bullet.getHeight());
+                batch.draw(textureBullet, bullet.getPosition().x - Cfg.Bullet.WIDTH/2, bullet.getPosition().y - Cfg.Bullet.HEIGHT/2, bullet.getWidth(), bullet.getHeight());
             }
         }
     }

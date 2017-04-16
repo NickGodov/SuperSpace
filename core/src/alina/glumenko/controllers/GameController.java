@@ -1,7 +1,7 @@
 package alina.glumenko.controllers;
 
-import alina.glumenko.models.Game.GameModel;
-import alina.glumenko.models.Game.Hero;
+import alina.glumenko.models.GameModel;
+import alina.glumenko.models.Hero;
 import alina.glumenko.screens.GameScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
