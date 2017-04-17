@@ -15,20 +15,14 @@ public class MenuScreen implements Screen {
     private MenuRender render;
     private MenuController controller;
 
-    private static MenuScreen menuScreen = new MenuScreen();
-
-    private MenuScreen() {
-        this.game = SuperSpace.getInstance();
-    }
-
-    public static MenuScreen getInstance() {
-        return menuScreen;
+    public MenuScreen(SuperSpace game) {
+        this.game = game;
     }
 
     @Override
     public void show() {
-        render = MenuRender.getInstance();
-        controller = MenuController.getInstance();
+        render = new MenuRender();
+        controller = new MenuController(render, game);
     }
 
 
@@ -59,6 +53,7 @@ public class MenuScreen implements Screen {
     @Override
     public void hide() {
         Gdx.input.setInputProcessor(null);
+        this.dispose();
     }
 
     @Override
@@ -66,10 +61,5 @@ public class MenuScreen implements Screen {
         Gdx.input.setInputProcessor(null);
         Gdx.input.setCatchBackKey(false);
         render.dispose();
-    }
-
-    public void setGameScreen() {
-        this.dispose();
-        game.setScreen(game.game);
     }
 }

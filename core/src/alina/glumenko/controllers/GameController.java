@@ -1,8 +1,10 @@
 package alina.glumenko.controllers;
 
+import alina.glumenko.SuperSpace;
 import alina.glumenko.models.GameModel;
 import alina.glumenko.models.Hero;
 import alina.glumenko.screens.GameScreen;
+import alina.glumenko.screens.PauseScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 
@@ -11,18 +13,12 @@ import com.badlogic.gdx.Input;
  */
 public class GameController {
 
-    private GameScreen gameScreen;
     private GameModel model;
+    private SuperSpace game;
 
-    private static GameController gameController = new GameController();
-
-    public static GameController getInstance() {
-        return gameController;
-    }
-
-    private GameController() {
-        this.model = GameModel.getInstance();
-        this.gameScreen = GameScreen.getInstance();
+    public GameController(GameModel model, SuperSpace game) {
+        this.model = model;
+        this.game = game;
     }
 
     public void update(float delta) {
@@ -44,7 +40,7 @@ public class GameController {
             hero.attack();
         }
         if(Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
-            gameScreen.setPauseScreen();
+            game.setScreen(new PauseScreen(game));
         }
         if(Gdx.input.isTouched()) {
             hero.moveTo(Gdx.input.getX(), Gdx.graphics.getHeight() - Gdx.input.getY());

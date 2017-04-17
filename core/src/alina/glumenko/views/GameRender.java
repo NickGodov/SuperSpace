@@ -13,7 +13,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  */
 public class GameRender {
 
-    private static GameRender gameRender = new GameRender();
     private BitmapFont font;
     private GameModel model;
     private SpriteBatch batch;
@@ -27,13 +26,9 @@ public class GameRender {
     private Texture textureBonusPoint;
     private Texture textureHero;
 
-    public static GameRender getInstance() {
-        return gameRender;
-    }
-
-    private GameRender() {
+    public GameRender(GameModel model) {
         batch = new SpriteBatch();
-        this.model = GameModel.getInstance();
+        this.model = model;
         loadTextures();
     }
 
@@ -53,7 +48,6 @@ public class GameRender {
 
     public void  render() {
         batch.begin();
-        model.update();
         drawBkg();
         drawStars();
         drawAsteroids();
@@ -137,7 +131,14 @@ public class GameRender {
             textureHero.dispose();
             textureAstr.dispose();
             textureBullet.dispose();
+            font.dispose();
             bkg.dispose();
+            textureStar.dispose();
+            textureHP.dispose();
+            texturePoint.dispose();
+            textureBonusHP.dispose();
+            textureBonusPoint.dispose();
+            textureHero.dispose();
         } catch (Exception e) {
 
         }

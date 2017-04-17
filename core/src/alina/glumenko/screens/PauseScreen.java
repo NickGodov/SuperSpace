@@ -1,7 +1,11 @@
 package alina.glumenko.screens;
 
 import alina.glumenko.SuperSpace;
+import alina.glumenko.controllers.PauseController;
+import alina.glumenko.views.PauseRender;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.GL20;
 
 /**
  * Created by Alina on 08.04.2017.
@@ -9,25 +13,27 @@ import com.badlogic.gdx.Screen;
 public class PauseScreen implements Screen {
 
     private SuperSpace game;
+    private PauseRender render;
+    private PauseController controller;
 
-    private static PauseScreen pauseScreen = new PauseScreen();
-
-    public PauseScreen() {
-        this.game = SuperSpace.getInstance();
-    }
-
-    public static PauseScreen getInstance() {
-        return pauseScreen;
+    public PauseScreen(SuperSpace game) {
+        this.game = game;
     }
 
     @Override
     public void show() {
-
+        render = new PauseRender();
+        controller = new PauseController(render, game);
     }
+
 
     @Override
     public void render(float delta) {
+        Gdx.gl.glClearColor(1f, 1f, 1f, 1f);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+        controller.update(delta);
+        render.render();
     }
 
     @Override
@@ -47,21 +53,14 @@ public class PauseScreen implements Screen {
 
     @Override
     public void hide() {
-
+        Gdx.input.setInputProcessor(null);
+        this.dispose();
     }
 
     @Override
     public void dispose() {
-
-    }
-
-    public void setMenuScreen() {
-        this.dispose();
-        game.setScreen(game.pause);
-    }
-
-    public void setGameScreen() {
-        this.dispose();
-        game.setScreen(game.pause);
+        Gdx.input.setInputProcessor(null);
+        Gdx.input.setCatchBackKey(false);
+        render.dispose();
     }
 }

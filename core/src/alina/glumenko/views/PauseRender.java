@@ -14,21 +14,19 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * Created by Alina on 09.04.2017.
+ * Created by Alina on 17.04.2017.
  */
-public class MenuRender {
+public class PauseRender {
 
     private Stage stage;
     private Skin skin;
     private Texture bkg;
-    private TextButton startButton;
-    private TextButton exitButton;
-    private TextButton catalogButton;
-    private TextButton helpButton;
+    private TextButton resumeButton;
+    private TextButton menuButton;
     private Map<String, TextButton> buttons;
 
 
-    public MenuRender() {
+    public PauseRender() {
         buttons = new LinkedHashMap<String, TextButton>();
         stage = new Stage();
         fillStage();
@@ -38,10 +36,8 @@ public class MenuRender {
 
     private void fillStage() {
         createButtons();
-        stage.addActor(startButton);
-        stage.addActor(catalogButton);
-        stage.addActor(helpButton);
-        stage.addActor(exitButton);
+        stage.addActor(resumeButton);
+        stage.addActor(menuButton);
     }
 
     private void createBkg() {
@@ -56,16 +52,12 @@ public class MenuRender {
         int i = 0;
 
         createSkin();
-        startButton = new TextButton("Start", skin);
-        catalogButton = new TextButton("Catalog", skin);
-        helpButton = new TextButton("Help", skin);
-        exitButton = new TextButton("Exit", skin);
+        resumeButton = new TextButton("Resume", skin);
+        menuButton = new TextButton("Menu", skin);
 
         //create dictionary
-        buttons.put(startButton.getText().toString(), startButton);
-        buttons.put(catalogButton.getText().toString(), catalogButton);
-        buttons.put(helpButton.getText().toString(), helpButton);
-        buttons.put(exitButton.getText().toString(), exitButton);
+        buttons.put(resumeButton.getText().toString(), resumeButton);
+        buttons.put(menuButton.getText().toString(), menuButton);
 
         //set positions
         for (TextButton button : buttons.values()) {

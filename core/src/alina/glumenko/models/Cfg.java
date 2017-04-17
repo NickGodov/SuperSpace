@@ -11,8 +11,8 @@ public class Cfg {
         public static final float SIZE = 64;
 
         //random speed
-        public static final float INDEX_SPEED_FROM = 2.0f;
-        public static final float INDEX_SPEED_TO = 4.0f;
+        public static final float INDEX_SPEED_FROM = 3.0f;
+        public static final float INDEX_SPEED_TO = 5.0f;
 
         //random scale
         public static final float INDEX_SCALE = 0.2f;
@@ -22,7 +22,7 @@ public class Cfg {
         public static final int INDEX_MAXHP_FROM = 2;
         public static final int INDEX_MAXHP = 6;
 
-        public static final float INDEX_ANGLE = 180.0f;
+        public static final float INDEX_ANGLE = 360.0f;
     }
 
     public static class Bullet {
@@ -50,7 +50,7 @@ public class Cfg {
 
     public static class Star {
         public static final float INDEX_SPEED_FROM = 2.0f;
-        public static final float INDEX_SPEED_TO = 4.0f;
+        public static final float INDEX_SPEED_TO = 8.0f;
         public static final int POSITION_X_LIMIT = 20;
     }
 }

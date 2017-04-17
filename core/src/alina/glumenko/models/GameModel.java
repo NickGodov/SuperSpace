@@ -7,16 +7,11 @@ import com.badlogic.gdx.math.Intersector;
  */
 public class GameModel {
 
-    private static GameModel gameModel = new GameModel();
     private Hero hero;
     private Star[] stars;
     private Asteroid[] asteroids;
 
-    public static GameModel getInstance() {
-        return gameModel;
-    }
-
-    private GameModel() {
+    public GameModel() {
         restart();
     }
 
@@ -86,6 +81,12 @@ public class GameModel {
         createAsteroids();
         this.stars = new Star[Cfg.GameModel.STARS_COUNT];
         createStars();
+    }
+
+    //clear arrays
+    public void dispose() {
+        stars = new Star[0];
+        asteroids = new Asteroid[0];
     }
 
     public Hero getHero() {

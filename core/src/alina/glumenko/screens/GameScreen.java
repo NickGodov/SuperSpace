@@ -18,21 +18,16 @@ public class GameScreen implements Screen {
     private GameController controller;
     private GameRender render;
 
-    private static GameScreen gameScreen = new GameScreen();
-
-    private GameScreen() {
-        this.game = SuperSpace.getInstance();
+    public GameScreen(SuperSpace game) {
+        this.game = game;
     }
 
-    public static GameScreen getInstance() {
-        return gameScreen;
-    }
 
     @Override
     public void show() {
-        model = GameModel.getInstance();
-        render = GameRender.getInstance();
-        controller = GameController.getInstance();
+        model = new GameModel();
+        render = new GameRender(model);
+        controller = new GameController(model, game);
     }
 
     @Override
@@ -63,6 +58,7 @@ public class GameScreen implements Screen {
     @Override
     public void hide() {
         Gdx.input.setInputProcessor(null);
+        this.dispose();
     }
 
     @Override
@@ -70,9 +66,5 @@ public class GameScreen implements Screen {
         Gdx.input.setInputProcessor(null);
         Gdx.input.setCatchBackKey(false);
         render.dispose();
-    }
-
-    public void setPauseScreen() {
-        game.setScreen(game.pause);
     }
 }
