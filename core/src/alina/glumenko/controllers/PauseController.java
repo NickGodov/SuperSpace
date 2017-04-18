@@ -3,6 +3,7 @@ package alina.glumenko.controllers;
 import alina.glumenko.SuperSpace;
 import alina.glumenko.screens.GameScreen;
 import alina.glumenko.screens.MenuScreen;
+import alina.glumenko.screens.PauseScreen;
 import alina.glumenko.views.PauseRender;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -15,28 +16,30 @@ import java.util.Map;
  */
 public class PauseController {
     private PauseRender render;
-    private SuperSpace game;
     private Map<String, TextButton> buttons;
 
-    public PauseController(PauseRender render, SuperSpace game) {
+    private PauseScreen pauseScreen;
+
+    public PauseController(PauseRender render, PauseScreen pauseScreen) {
         this.render = render;
-        this.game = game;
+        this.pauseScreen = pauseScreen;
+        buttons = render.getButtons();
+
     }
 
     public void update(float delta) {
-        buttons = render.getButtons();
 
         buttons.get("Resume").addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                pauseScreen.setGameScreen();
             }
         });
 
         buttons.get("Menu").addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new MenuScreen(game));
+                pauseScreen.setMenuScreen();
             }
         });
     }

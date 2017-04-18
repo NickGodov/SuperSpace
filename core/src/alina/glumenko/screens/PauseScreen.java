@@ -23,9 +23,8 @@ public class PauseScreen implements Screen {
     @Override
     public void show() {
         render = new PauseRender();
-        controller = new PauseController(render, game);
+        controller = new PauseController(render, this);
     }
-
 
     @Override
     public void render(float delta) {
@@ -62,5 +61,15 @@ public class PauseScreen implements Screen {
         Gdx.input.setInputProcessor(null);
         Gdx.input.setCatchBackKey(false);
         render.dispose();
+    }
+
+    public void setGameScreen() {
+        this.dispose();
+        game.setScreen(new GameScreen(game));
+    }
+
+    public void setMenuScreen() {
+        this.dispose();
+        game.setScreen(new MenuScreen(game));
     }
 }

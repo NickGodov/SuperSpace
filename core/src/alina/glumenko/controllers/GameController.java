@@ -14,15 +14,16 @@ import com.badlogic.gdx.Input;
 public class GameController {
 
     private GameModel model;
-    private SuperSpace game;
+    private GameScreen gameScreen;
+    private Hero hero;
 
-    public GameController(GameModel model, SuperSpace game) {
+    public GameController(GameModel model, GameScreen gameScreen) {
         this.model = model;
-        this.game = game;
+        this.gameScreen = gameScreen;
     }
 
     public void update(float delta) {
-        Hero hero = model.getHero();
+        hero = model.getHero();
 
         if(Gdx.input.isKeyPressed(Input.Keys.W)) {
             hero.moveUp();
@@ -40,7 +41,7 @@ public class GameController {
             hero.attack();
         }
         if(Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
-            game.setScreen(new PauseScreen(game));
+            gameScreen.setPauseScreen();
         }
         if(Gdx.input.isTouched()) {
             hero.moveTo(Gdx.input.getX(), Gdx.graphics.getHeight() - Gdx.input.getY());

@@ -1,9 +1,9 @@
 package alina.glumenko.controllers;
 
-
-import alina.glumenko.SuperSpace;
 import alina.glumenko.screens.GameScreen;
+import alina.glumenko.screens.MenuScreen;
 import alina.glumenko.views.MenuRender;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -16,42 +16,42 @@ import java.util.Map;
 public class MenuController {
 
     private MenuRender render;
-    private SuperSpace game;
+    private MenuScreen menuScreen;
     private Map<String, TextButton> buttons;
 
-    public MenuController(MenuRender render, SuperSpace game) {
+    public MenuController(MenuRender render, MenuScreen menuScreen) {
         this.render = render;
-        this.game = game;
+        this.menuScreen = menuScreen;
+        buttons = render.getButtons();
     }
 
     public void update(float delta) {
-        buttons = render.getButtons();
 
         buttons.get("Start").addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                menuScreen.setGameScreen();
             }
         });
 
         buttons.get("Catalog").addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                menuScreen.setCatalogScreen();
             }
         });
 
         buttons.get("Help").addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                menuScreen.setHelpScreen();
             }
         });
 
         buttons.get("Exit").addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new GameScreen(game));
+                Gdx.app.exit();
             }
         });
     }

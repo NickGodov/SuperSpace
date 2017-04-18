@@ -1,8 +1,6 @@
 package alina.glumenko;
 
-import alina.glumenko.screens.GameScreen;
 import alina.glumenko.screens.MenuScreen;
-import alina.glumenko.screens.PauseScreen;
 import com.badlogic.gdx.Game;
 
 /**
@@ -10,9 +8,7 @@ import com.badlogic.gdx.Game;
  */
 public class SuperSpace extends Game {
 
-    public GameScreen game;
     public MenuScreen menu;
-    public PauseScreen pause;
 
     @Override
     public void create() {

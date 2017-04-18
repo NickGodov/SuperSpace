@@ -27,7 +27,7 @@ public class GameScreen implements Screen {
     public void show() {
         model = new GameModel();
         render = new GameRender(model);
-        controller = new GameController(model, game);
+        controller = new GameController(model, this);
     }
 
     @Override
@@ -66,5 +66,10 @@ public class GameScreen implements Screen {
         Gdx.input.setInputProcessor(null);
         Gdx.input.setCatchBackKey(false);
         render.dispose();
+    }
+
+    public void setPauseScreen() {
+        this.dispose();
+        game.setScreen(new PauseScreen(game));
     }
 }

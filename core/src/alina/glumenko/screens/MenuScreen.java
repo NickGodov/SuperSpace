@@ -22,7 +22,7 @@ public class MenuScreen implements Screen {
     @Override
     public void show() {
         render = new MenuRender();
-        controller = new MenuController(render, game);
+        controller = new MenuController(render, this);
     }
 
 
@@ -61,5 +61,20 @@ public class MenuScreen implements Screen {
         Gdx.input.setInputProcessor(null);
         Gdx.input.setCatchBackKey(false);
         render.dispose();
+    }
+
+    public void setGameScreen() {
+        this.dispose();
+        game.setScreen(new GameScreen(game));
+    }
+
+    public void setCatalogScreen() {
+        this.dispose();
+        game.setScreen(new GameScreen(game));
+    }
+
+    public void setHelpScreen() {
+        this.dispose();
+        game.setScreen(new GameScreen(game));
     }
 }

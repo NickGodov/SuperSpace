@@ -46,12 +46,14 @@ public class GameModel {
     private void updateBullets() {
         Bullet[] bullets = hero.getBullets();
         for(int i = 0; i < bullets.length; i++) {
-            bullets[i].update();
-            for(int j = 0; j < asteroids.length; j++) {
-                if(asteroids[j].getCircle().contains(bullets[i].getPosition())) {
-                    bullets[i].destroy();
-                    if(asteroids[j].takeDamage(Cfg.GameModel.DAMAGE)) {
-                        hero.addScore(Cfg.GameModel.DAMAGE * asteroids[j].getMaxHp());
+            if(bullets[i].isActive()) {
+                bullets[i].update();
+                for (int j = 0; j < asteroids.length; j++) {
+                    if (asteroids[j].getCircle().contains(bullets[i].getPosition())) {
+                        bullets[i].destroy();
+                        if (asteroids[j].takeDamage(Cfg.GameModel.DAMAGE)) {
+                            hero.addScore(Cfg.GameModel.DAMAGE * asteroids[j].getMaxHp());
+                        }
                     }
                 }
             }
