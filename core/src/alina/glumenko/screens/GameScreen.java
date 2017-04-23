@@ -2,8 +2,10 @@ package alina.glumenko.screens;
 
 import alina.glumenko.SuperSpace;
 import alina.glumenko.controllers.GameController;
+import alina.glumenko.controllers.PauseController;
 import alina.glumenko.models.GameModel;
 import alina.glumenko.views.GameRender;
+import alina.glumenko.views.PauseRender;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
@@ -14,20 +16,25 @@ import com.badlogic.gdx.graphics.GL20;
 public class GameScreen implements Screen {
 
     private SuperSpace game;
-    private GameModel model;
-    private GameController controller;
-    private GameRender render;
+    private GameModel gameModel;
+    private GameController gameController;
+    private GameRender gameRender;
+    private PauseRender pauseRender;
+    private PauseController pauseController;
+    private State state = State.UNPAUSED;
 
     public GameScreen(SuperSpace game) {
         this.game = game;
     }
 
-
     @Override
     public void show() {
-        model = new GameModel();
-        render = new GameRender(model);
-        controller = new GameController(model, this);
+        gameModel = new GameModel();
+        gameRender = new GameRender(gameModel);
+        gameController = new GameController(gameModel, this);
+
+        pauseRender = new PauseRender();
+        pauseController = new PauseController(pauseRender, this);
     }
 
     @Override
@@ -35,9 +42,19 @@ public class GameScreen implements Screen {
         Gdx.gl.glClearColor(1f, 1f, 1f, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        controller.update(delta);
-        model.update();
-        render.render();
+        switch (state) {
+            case UNPAUSED:
+                gameModel.update();
+                gameController.update(delta);
+                gameRender.render();
+                break;
+            case PAUSED:
+                pauseRender.render();
+                break;
+            default:
+                state = State.UNPAUSED;
+                break;
+        }
     }
 
     @Override
@@ -65,11 +82,29 @@ public class GameScreen implements Screen {
     public void dispose() {
         Gdx.input.setInputProcessor(null);
         Gdx.input.setCatchBackKey(false);
-        render.dispose();
+        gameRender.dispose();
+        gameModel.dispose();
+        pauseRender.dispose();
     }
 
-    public void setPauseScreen() {
+    public void setMenuScreen() {
         this.dispose();
-        game.setScreen(new PauseScreen(game));
+        game.setScreen(game.menuScreen);
     }
+
+    public void switchPause() {
+        switch (state) {
+            case PAUSED:
+                state = State.UNPAUSED;
+                break;
+            case UNPAUSED:
+                state = State.PAUSED;
+                break;
+            default:
+                state = State.UNPAUSED;
+                break;
+        }
+    }
+
+    private enum State { PAUSED, UNPAUSED }
 }

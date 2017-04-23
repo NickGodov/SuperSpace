@@ -1,10 +1,8 @@
 package alina.glumenko.controllers;
 
-import alina.glumenko.SuperSpace;
 import alina.glumenko.models.GameModel;
 import alina.glumenko.models.Hero;
 import alina.glumenko.screens.GameScreen;
-import alina.glumenko.screens.PauseScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 
@@ -41,7 +39,7 @@ public class GameController {
             hero.attack();
         }
         if(Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
-            gameScreen.setPauseScreen();
+            gameScreen.switchPause();
         }
         if(Gdx.input.isTouched()) {
             hero.moveTo(Gdx.input.getX(), Gdx.graphics.getHeight() - Gdx.input.getY());

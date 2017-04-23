@@ -1,45 +1,37 @@
 package alina.glumenko.controllers;
 
-import alina.glumenko.SuperSpace;
 import alina.glumenko.screens.GameScreen;
-import alina.glumenko.screens.MenuScreen;
-import alina.glumenko.screens.PauseScreen;
 import alina.glumenko.views.PauseRender;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-
-import java.util.Map;
 
 /**
  * Created by Alina on 17.04.2017.
  */
 public class PauseController {
+
     private PauseRender render;
-    private Map<String, TextButton> buttons;
+    private GameScreen gameScreen;
 
-    private PauseScreen pauseScreen;
-
-    public PauseController(PauseRender render, PauseScreen pauseScreen) {
+    public PauseController(PauseRender render, GameScreen gameScreen) {
         this.render = render;
-        this.pauseScreen = pauseScreen;
-        buttons = render.getButtons();
-
+        this.gameScreen = gameScreen;
+        createButtonListeners();
     }
 
-    public void update(float delta) {
+    public void createButtonListeners() {
 
-        buttons.get("Resume").addListener(new ClickListener() {
+        render.getButtons().get("Resume").addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                pauseScreen.setGameScreen();
+                gameScreen.switchPause();
             }
         });
 
-        buttons.get("Menu").addListener(new ClickListener() {
+        render.getButtons().get("Menu").addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                pauseScreen.setMenuScreen();
+                gameScreen.setMenuScreen();
             }
         });
     }

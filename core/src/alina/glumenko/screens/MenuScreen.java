@@ -12,8 +12,8 @@ import com.badlogic.gdx.graphics.GL20;
 public class MenuScreen implements Screen {
 
     private SuperSpace game;
-    private MenuRender render;
-    private MenuController controller;
+    private MenuRender menuRender;
+    private MenuController menuController;
 
     public MenuScreen(SuperSpace game) {
         this.game = game;
@@ -21,8 +21,8 @@ public class MenuScreen implements Screen {
 
     @Override
     public void show() {
-        render = new MenuRender();
-        controller = new MenuController(render, this);
+        menuRender = new MenuRender();
+        menuController = new MenuController(menuRender, this);
     }
 
 
@@ -30,9 +30,7 @@ public class MenuScreen implements Screen {
     public void render(float delta) {
         Gdx.gl.glClearColor(1f, 1f, 1f, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        controller.update(delta);
-        render.render();
+        menuRender.render();
     }
 
     @Override
@@ -60,21 +58,21 @@ public class MenuScreen implements Screen {
     public void dispose() {
         Gdx.input.setInputProcessor(null);
         Gdx.input.setCatchBackKey(false);
-        render.dispose();
+        menuRender.dispose();
     }
 
     public void setGameScreen() {
         this.dispose();
-        game.setScreen(new GameScreen(game));
+        game.setScreen(game.gameScreen);
     }
 
     public void setCatalogScreen() {
         this.dispose();
-        game.setScreen(new GameScreen(game));
+        game.setScreen(game.gameScreen);
     }
 
     public void setHelpScreen() {
         this.dispose();
-        game.setScreen(new GameScreen(game));
+        game.setScreen(game.gameScreen);
     }
 }
