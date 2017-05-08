@@ -9,27 +9,23 @@ public class IntersectorAdapter {
 
     public static boolean overlaps(GameUnit object1, GameUnit object2) throws ClassNotFoundException {
 
-        String c1 = object1.getHitbox().getClass().getName();
-        String c2 = object2.getHitbox().getClass().getName();
 
-        if (c1.equals("Circle")) {
+        if (object1.getHitbox() instanceof Circle) {
 
-            if (c2.equals("Circle")) {
+            if (object2.getHitbox() instanceof Circle) {
                 return Intersector.overlaps((Circle) object1.getHitbox(), (Circle) object2.getHitbox());
             }
 
-            if (c2.equals("Rectangle")) {
-                return Intersector.overlaps((Circle)object1.getHitbox(), (Rectangle) object2.getHitbox());
+            if (object2.getHitbox() instanceof Rectangle) {
+                return Intersector.overlaps((Circle) object1.getHitbox(), (Rectangle) object2.getHitbox());
             }
 
         }
 
-        if (c1.equals("Rectangle")) {
-            if (c2.equals("Rectangle")) {
-                return Intersector.overlaps((Circle)object1.getHitbox(), (Rectangle) object2.getHitbox());
-            }
+        if (object1.getHitbox() instanceof Rectangle && object2.getHitbox() instanceof Rectangle) {
+                return Intersector.overlaps((Rectangle) object1.getHitbox(), (Rectangle) object2.getHitbox());
         }
-        
+
         throw new ClassNotFoundException("Hitbox class is not valid!");
     }
 

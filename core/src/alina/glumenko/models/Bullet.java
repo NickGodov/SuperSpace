@@ -26,20 +26,12 @@ public class Bullet extends PassiveUnit{
         active = true;
     }
 
-    public float getWidth() {
-        return Cfg.Bullet.DRAW_WIDTH;
-    }
-
     public float getXPosition() {
         return ((Rectangle)getHitbox()).getX();
     }
 
     public float getYPosition() {
         return ((Rectangle)getHitbox()).getY();
-    }
-
-    public float getHeight() {
-        return Cfg.Bullet.DRAW_HEIGHT;
     }
 
     @Override

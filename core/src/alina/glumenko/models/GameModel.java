@@ -4,11 +4,13 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Intersector;
 
+import java.util.*;
+
 public class GameModel {
 
     private Hero hero;
     private Star[] stars;
-    private Asteroid[] asteroids;
+    private List<Asteroid> asteroids;
 
     public GameModel() {
         restart();
@@ -27,21 +29,23 @@ public class GameModel {
      * Вынесите в фабрику
      */
     private void createAsteroids() {
-        for (int i = 0; i < asteroids.length; i++) {
-            asteroids[i] = new Asteroid();
+        asteroids = new ArrayList<Asteroid>();
+        for (int i = 0; i < Cfg.GameModel.ASTEROIDS_COUNT; i++) {
+            asteroids.add(new Asteroid());
         }
     }
 
-
     private void updateAsteroids() {
-        for (int i = 0; i < asteroids.length; i++) {
-            asteroids[i].updateUnit();
+        for (int i = 0; i < asteroids.size(); i++) {
+
+            asteroids.get(i).updateUnit();
 
             try {
-                if (IntersectorAdapter.overlaps(asteroids[i], hero)) {
-                    if (asteroids[i].takeDamage(Cfg.GameModel.DAMAGE)) {
-                        hero.addScore(Cfg.GameModel.DAMAGE * asteroids[i].getMaxHp());
-                    }
+                if (IntersectorAdapter.overlaps(asteroids.get(i), hero)) {
+
+                    asteroids.get(i).takeDamage(Cfg.GameModel.DAMAGE);
+                    hero.addScore(Cfg.GameModel.DAMAGE * asteroids.get(i).getMaxHp());
+
                     if (hero.takeDamage(Cfg.GameModel.DAMAGE)) {
                         restart();
                     }
@@ -57,14 +61,13 @@ public class GameModel {
         for (int i = 0; i < bullets.length; i++) {
             if (bullets[i].isActive()) {
                 bullets[i].updateUnit();
-                for (int j = 0; j < asteroids.length; j++) {
 
+                for (Asteroid a : asteroids) {
                     try {
-                        if (IntersectorAdapter.overlaps(asteroids[i], bullets[i])) {
+                        if (IntersectorAdapter.overlaps(a, bullets[i])) {
                             bullets[i].destroy();
-                            if (asteroids[j].takeDamage(Cfg.GameModel.DAMAGE)) {
-                                hero.addScore(Cfg.GameModel.DAMAGE * asteroids[j].getMaxHp());
-                            }
+                            a.takeDamage(Cfg.GameModel.DAMAGE);
+                            hero.addScore(Cfg.GameModel.DAMAGE * a.getMaxHp());
                         }
                     } catch (ClassNotFoundException e) {
                         e.printStackTrace();
@@ -93,7 +96,6 @@ public class GameModel {
 
     public void restart() {
         this.hero = new Hero();
-        this.asteroids = new Asteroid[Cfg.GameModel.ASTEROIDS_COUNT];
         createAsteroids();
         this.stars = new Star[Cfg.GameModel.STARS_COUNT];
         createStars();
@@ -102,14 +104,13 @@ public class GameModel {
     //clear arrays
     public void dispose() {
         stars = new Star[0];
-        asteroids = new Asteroid[0];
     }
 
     public Hero getHero() {
         return hero;
     }
 
-    public Asteroid[] getAsteroids() {
+    public List<Asteroid> getAsteroids() {
         return asteroids;
     }
 

@@ -14,4 +14,7 @@ public abstract class GameUnit {
         this.hitbox = hitbox;
     }
 
+    public abstract float getXPosition();
+    public abstract float getYPosition();
+
 }

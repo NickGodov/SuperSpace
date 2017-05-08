@@ -43,7 +43,7 @@ public class GameRender {
         createFont();
     }
 
-    public void  render() {
+    public void render() {
         batch.begin();
         drawBkg();
         drawStars();
@@ -55,8 +55,8 @@ public class GameRender {
     }
 
     private void createBkg() {
-        Pixmap pixmap = new Pixmap( Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), Pixmap.Format.RGBA8888);
-        pixmap.setColor(35/255f, 21/255f, 34/255f, 1.0f);
+        Pixmap pixmap = new Pixmap(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), Pixmap.Format.RGBA8888);
+        pixmap.setColor(35 / 255f, 21 / 255f, 34 / 255f, 1.0f);
         pixmap.fillRectangle(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         bkg = new Texture(pixmap);
     }
@@ -74,8 +74,8 @@ public class GameRender {
         font.setColor(Color.WHITE);
     }
 
-    private void drawBkg(){
-        batch.draw(bkg, 0 , 0);
+    private void drawBkg() {
+        batch.draw(bkg, 0, 0);
     }
 
     private void drawUI() {
@@ -83,41 +83,47 @@ public class GameRender {
         int distBetween = 5;
         int margin = textureHP.getWidth() + distBetween;
         int scoreX = padding * 2 + texturePoint.getWidth();
-        int scoreY = padding * 2 + textureHP.getHeight() + texturePoint.getHeight()/2;
+        int scoreY = padding * 2 + textureHP.getHeight() + texturePoint.getHeight() / 2;
 
 
-        for(int i = 0; i < model.getHero().getHp(); i++) {
+        for (int i = 0; i < model.getHero().getHp(); i++) {
             batch.draw(textureHP, 0 + i * margin + padding, padding);
         }
         batch.draw(texturePoint, padding, padding * 2 + textureHP.getHeight());
         font.draw(batch, "" + model.getHero().getScore(), scoreX, scoreY);
     }
 
+
+
     private void drawAsteroids() {
-        for(Asteroid asteroid : model.getAsteroids()) {
-            batch.draw(textureAstr, asteroid.getPosition().x - Cfg.Asteroid.SIZE/2, asteroid.getPosition().y - Cfg.Asteroid.SIZE/2,
-                    Cfg.Asteroid.SIZE/2, Cfg.Asteroid.SIZE/2,
+        for (Asteroid asteroid : model.getAsteroids()) {
+
+            float x = asteroid.getXPosition();
+            float y = asteroid.getYPosition();
+
+            batch.draw(textureAstr, asteroid.getXPosition() - Cfg.Asteroid.SIZE / 2, asteroid.getYPosition() - Cfg.Asteroid.SIZE / 2,
+                    Cfg.Asteroid.SIZE / 2, Cfg.Asteroid.SIZE / 2,
                     Cfg.Asteroid.SIZE, Cfg.Asteroid.SIZE,
-                        asteroid.getScale(), asteroid.getScale(),
-                        asteroid.getAngle(), 0, 0,
-                        (int)Cfg.Asteroid.SIZE, (int)Cfg.Asteroid.SIZE, false, false);
+                    asteroid.getScale(), asteroid.getScale(),
+                    asteroid.getAngle(), 0, 0,
+                    (int) Cfg.Asteroid.SIZE, (int) Cfg.Asteroid.SIZE, false, false);
         }
     }
 
     private void drawHero() {
-        batch.draw(textureHero, model.getHero().getPosition().x, model.getHero().getPosition().y, model.getHero().getRect().width, model.getHero().getRect().height);
+        batch.draw(textureHero, model.getHero().getXPosition(), model.getHero().getYPosition(), Cfg.Hero.HERO_WIDTH, Cfg.Hero.HERO_HEIGHT);
     }
 
     private void drawBullets() {
-        for(Bullet bullet : model.getHero().getBullets()) {
-            if(bullet.isActive()) {
-                batch.draw(textureBullet, bullet.getXPosition() - Cfg.Bullet.WIDTH/2, bullet.getYPosition() - Cfg.Bullet.HEIGHT/2, bullet.getWidth(), bullet.getHeight());
+        for (Bullet bullet : model.getHero().getBullets()) {
+            if (bullet.isActive()) {
+                batch.draw(textureBullet, bullet.getXPosition() - Cfg.Bullet.WIDTH / 2, bullet.getYPosition() - Cfg.Bullet.HEIGHT / 2, Cfg.Bullet.DRAW_WIDTH, Cfg.Bullet.DRAW_HEIGHT);
             }
         }
     }
 
     private void drawStars() {
-        for(Star star : model.getStars()) {
+        for (Star star : model.getStars()) {
             batch.draw(textureStar, star.getPosition().x, star.getPosition().y);
         }
     }

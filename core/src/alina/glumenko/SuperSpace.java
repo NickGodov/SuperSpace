@@ -4,9 +4,6 @@ import alina.glumenko.screens.GameScreen;
 import alina.glumenko.screens.MenuScreen;
 import com.badlogic.gdx.Game;
 
-/**
- * Created by Alina on 29.03.2017.
- */
 public class SuperSpace extends Game {
 
     public MenuScreen menuScreen;
