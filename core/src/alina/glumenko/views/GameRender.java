@@ -8,9 +8,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-/**
- * Created by Alina on 26.03.2017.
- */
 public class GameRender {
 
     private BitmapFont font;
@@ -114,7 +111,7 @@ public class GameRender {
     private void drawBullets() {
         for(Bullet bullet : model.getHero().getBullets()) {
             if(bullet.isActive()) {
-                batch.draw(textureBullet, bullet.getPosition().x - Cfg.Bullet.WIDTH/2, bullet.getPosition().y - Cfg.Bullet.HEIGHT/2, bullet.getWidth(), bullet.getHeight());
+                batch.draw(textureBullet, bullet.getXPosition() - Cfg.Bullet.WIDTH/2, bullet.getYPosition() - Cfg.Bullet.HEIGHT/2, bullet.getWidth(), bullet.getHeight());
             }
         }
     }

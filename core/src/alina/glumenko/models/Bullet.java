@@ -22,12 +22,20 @@ public class Bullet extends PassiveUnit{
     }
 
     public void setup(float x, float y) {
-        setHitbox(new Rectangle(y,y,1,1));
+        setHitbox(new Rectangle(x,y,1,1));
         active = true;
     }
 
     public float getWidth() {
         return Cfg.Bullet.DRAW_WIDTH;
+    }
+
+    public float getXPosition() {
+        return ((Rectangle)getHitbox()).getX();
+    }
+
+    public float getYPosition() {
+        return ((Rectangle)getHitbox()).getY();
     }
 
     public float getHeight() {
