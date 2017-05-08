@@ -1,25 +1,19 @@
 package alina.glumenko.models;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
-/**
- * Created by Alina on 26.03.2017.
- */
-public class Bullet {
-    private Vector2 position;
-    private boolean active;
+public class Bullet extends PassiveUnit{
 
-    public Vector2 getPosition() {
-        return position;
-    }
+    private boolean active;
 
     public boolean isActive() {
         return active;
     }
 
     public Bullet() {
-        position = new Vector2(0, 0);
+        setHitbox(new Rectangle(0,0,1,1));
         active = false;
     }
 
@@ -28,16 +22,8 @@ public class Bullet {
     }
 
     public void setup(float x, float y) {
-        position.x = x;
-        position.y = y;
+        setHitbox(new Rectangle(y,y,1,1));
         active = true;
-    }
-
-    public void update() {
-        position.x += Cfg.Bullet.SPEED;
-        if(position.x > Gdx.graphics.getWidth()) {
-            destroy();
-        }
     }
 
     public float getWidth() {
@@ -46,5 +32,15 @@ public class Bullet {
 
     public float getHeight() {
         return Cfg.Bullet.DRAW_HEIGHT;
+    }
+
+    @Override
+    public void updateUnit() {
+        Rectangle rect = (Rectangle) getHitbox();
+        rect.setX(rect.getX() + Cfg.Bullet.SPEED);
+
+        if (rect.getX() > Gdx.graphics.getWidth()) {
+            destroy();
+        }
     }
 }

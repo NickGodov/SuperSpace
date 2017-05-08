@@ -4,13 +4,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Vector2;
 
-/**
- * Created by Alina on 26.03.2017.
- */
-public class Asteroid {
+public class Asteroid extends PassiveUnit {
     private Vector2 position;
     private float speed;
-    private Circle circle;
     private float angle;
     private float scale;
     private int maxHp;
@@ -27,7 +23,7 @@ public class Asteroid {
         maxHp = Cfg.Asteroid.INDEX_MAXHP_FROM + (int)(Math.random() * Cfg.Asteroid.INDEX_MAXHP);
         hp = maxHp;
         scale = Cfg.Asteroid.INDEX_WEIGHT + hp * Cfg.Asteroid.INDEX_SCALE;
-        circle = new Circle(position.x, position.y, Cfg.Asteroid.SIZE/2);
+        setHitbox(new Circle(position.x, position.y, Cfg.Asteroid.SIZE/2));
     }
 
     public void recreate() {
@@ -39,17 +35,6 @@ public class Asteroid {
         angle = (float)Math.random() * Cfg.Asteroid.INDEX_ANGLE;
         maxHp = Cfg.Asteroid.INDEX_MAXHP_FROM + (int)(Math.random() * Cfg.Asteroid.INDEX_MAXHP);
         hp = maxHp;
-    }
-
-    public void update() {
-        position.x -= speed - hp * Cfg.Asteroid.INDEX_WEIGHT;
-        scale = Cfg.Asteroid.INDEX_WEIGHT + hp * Cfg.Asteroid.INDEX_SCALE;
-        angle += speed / 2;
-        if(position.x < -Cfg.Asteroid.SIZE) {
-            recreate();
-        }
-        circle.x = position.x;
-        circle.y = position.y;
     }
 
     public boolean takeDamage(int dmg) {
@@ -77,7 +62,17 @@ public class Asteroid {
         return maxHp;
     }
 
-    public Circle getCircle() {
-        return circle;
+    @Override
+    public void updateUnit() {
+        position.x -= speed - hp * Cfg.Asteroid.INDEX_WEIGHT;
+        scale = Cfg.Asteroid.INDEX_WEIGHT + hp * Cfg.Asteroid.INDEX_SCALE;
+        angle += speed / 2;
+        if(position.x < -Cfg.Asteroid.SIZE) {
+            recreate();
+        }
+
+        Circle c = (Circle) getHitbox();
+        c.x = position.x;
+        c.y = position.y;
     }
 }

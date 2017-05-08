@@ -1,10 +1,9 @@
 package alina.glumenko.models;
 
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Intersector;
 
-/**
- * Created by Alina on 29.03.2017.
- */
 public class GameModel {
 
     private Hero hero;
@@ -15,45 +14,60 @@ public class GameModel {
         restart();
     }
 
+    /*
+     * Вынесите в фабрику
+     */
     private void createStars() {
-        for(int i = 0; i < stars.length; i++) {
+        for (int i = 0; i < stars.length; i++) {
             stars[i] = new Star();
         }
     }
 
+    /*
+     * Вынесите в фабрику
+     */
     private void createAsteroids() {
-        for(int i = 0; i < asteroids.length; i++) {
+        for (int i = 0; i < asteroids.length; i++) {
             asteroids[i] = new Asteroid();
         }
     }
 
-    private void updateAsteroids() {
-        for(int i = 0; i < asteroids.length; i++) {
-            asteroids[i].update();
 
-            //check collision with hero
-            if(Intersector.overlaps(asteroids[i].getCircle(), hero.getRect())) {
-                if(asteroids[i].takeDamage(Cfg.GameModel.DAMAGE)) {
-                    hero.addScore(Cfg.GameModel.DAMAGE * asteroids[i].getMaxHp());
+    private void updateAsteroids() {
+        for (int i = 0; i < asteroids.length; i++) {
+            asteroids[i].updateUnit();
+
+            try {
+                if (IntersectorAdapter.overlaps(asteroids[i], hero)) {
+                    if (asteroids[i].takeDamage(Cfg.GameModel.DAMAGE)) {
+                        hero.addScore(Cfg.GameModel.DAMAGE * asteroids[i].getMaxHp());
+                    }
+                    if (hero.takeDamage(Cfg.GameModel.DAMAGE)) {
+                        restart();
+                    }
                 }
-                if(hero.takeDamage(Cfg.GameModel.DAMAGE)) {
-                    restart();
-                }
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
         }
     }
 
     private void updateBullets() {
         Bullet[] bullets = hero.getBullets();
-        for(int i = 0; i < bullets.length; i++) {
-            if(bullets[i].isActive()) {
-                bullets[i].update();
+        for (int i = 0; i < bullets.length; i++) {
+            if (bullets[i].isActive()) {
+                bullets[i].updateUnit();
                 for (int j = 0; j < asteroids.length; j++) {
-                    if (asteroids[j].getCircle().contains(bullets[i].getPosition())) {
-                        bullets[i].destroy();
-                        if (asteroids[j].takeDamage(Cfg.GameModel.DAMAGE)) {
-                            hero.addScore(Cfg.GameModel.DAMAGE * asteroids[j].getMaxHp());
+
+                    try {
+                        if (IntersectorAdapter.overlaps(asteroids[i], bullets[i])) {
+                            bullets[i].destroy();
+                            if (asteroids[j].takeDamage(Cfg.GameModel.DAMAGE)) {
+                                hero.addScore(Cfg.GameModel.DAMAGE * asteroids[j].getMaxHp());
+                            }
                         }
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
                     }
                 }
             }
@@ -61,7 +75,7 @@ public class GameModel {
     }
 
     private void updateStars() {
-        for(int i = 0; i < stars.length; i++) {
+        for (int i = 0; i < stars.length; i++) {
             stars[i].update();
         }
     }

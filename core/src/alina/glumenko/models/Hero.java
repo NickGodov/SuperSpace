@@ -4,11 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
-/**
- * Created by Alina on 26.03.2017.
- */
-
-public class Hero {
+public class Hero extends GameUnit{
     private Bullet[] bullets;
     private Vector2 position;
     private float speed;
